@@ -99,7 +99,7 @@ $(function() {
 	$("span").each(function(index) {
              var heading = $(this).text();
              var actual_index = index + 1;
-             $(this).text(heading + " " + actual_index + "/" + pages.length);
+             $(this).text(heading + " (" + actual_index + "/" + pages.length + ")");
 	});
 	$("audio").audioPlayer();
 	Page.init();
