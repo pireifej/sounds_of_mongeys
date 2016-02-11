@@ -27,7 +27,7 @@ var Page = (function() {
                     var next_audio = $("#" + curr_page)[0];
                     prev_audio.pause();
                     next_audio.play();
-                    console.log(curr_page);
+
                     config.$bookBlock.bookblock( 'next' );
                     return false;
                 } );
@@ -38,7 +38,7 @@ var Page = (function() {
                     var next_audio = $("#" + curr_page)[0];
                     prev_audio.pause();
                     next_audio.play();
-                    console.log(curr_page);
+
                     config.$bookBlock.bookblock( 'prev' );
                     return false;
                 } );
@@ -49,7 +49,7 @@ var Page = (function() {
                     var next_audio = $("#" + curr_page)[0];
                     prev_audio.pause();
                     next_audio.play();
-                    console.log(curr_page);
+
                     config.$bookBlock.bookblock( 'first' );
                     return false;
                 });
@@ -60,7 +60,7 @@ var Page = (function() {
                     var next_audio = $("#" + curr_page)[0];
                     prev_audio.pause();
                     next_audio.play();
-                    console.log(curr_page);
+
                     config.$bookBlock.bookblock( 'last' );
                     return false;
                 });
@@ -96,6 +96,11 @@ $(function() {
 	for (var i = 1; i < 31; i++) {
 		pages.push(i);
 	}
+	$("span").each(function(index) {
+             var heading = $(this).text();
+             var actual_index = index + 1;
+             $(this).text(heading + " " + actual_index + "/" + pages.length);
+	});
 	$("audio").audioPlayer();
 	Page.init();
 });
