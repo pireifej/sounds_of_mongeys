@@ -136,6 +136,7 @@
 
 				theAudio.addEventListener( 'ended', function()
 				{
+                    $("#bb-nav-next").trigger("click");
 					thePlayer.removeClass( cssClass.playing );
 				});
 
